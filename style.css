@@ -6,6 +6,7 @@
     --color-sections: #ffffff;
     --color-dark: #2E2D32;
     --color-light: #ececec;
+    --color-font-destaque: #b6b6b6;
     --font-default: "Inter", sans-serif;
     --font-special: "Playfair Display", serif;
 }
@@ -26,13 +27,17 @@ body {
     height: 100vh;
     transition: 0.3s;
     background-color: var(--color-background);
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-family: var(--font-default);
+}
+
+header {
+    font-size: 1.15rem;
 }
 
 #section_main, #section_skills, footer, #about_me  {
     background-color: var(--color-sections);
-    margin: 0.8rem 1rem;
+    margin: 1rem 1.5rem;
     padding: 4rem 10rem;
     border-radius: 1.5rem;
 }
@@ -56,10 +61,12 @@ a {
 }
 
 .btn_default, .button_menu_projetos {
-    padding: 0.6rem 1.3rem;
+    padding: 0.6rem 1.8rem;
     border: solid var(--color-light) 0.2rem;
     border-radius: 10rem;
     font-weight: 600;
+    display: flex;
+    gap: 1rem;
 }
 
 .button_menu_projetos {
@@ -79,3 +86,76 @@ a {
     transition: 0.3s;
 }
 
+
+h1.title {
+    font-weight: 700;
+    padding-top: 5rem;
+    font-size: 7rem;
+    line-height: 6.3rem;
+}
+
+.title strong {
+    grid-area: front_end;
+    font-family: var(--font-special);
+    font-weight: 200;
+    font-style: italic;
+    font-size: 6rem;
+    color: var(--color-font-destaque);
+}
+
+#start {
+    display: grid;
+    grid-template-areas:
+    "front_end profile profile"
+    "paragrafo profile profile"
+    "links profile profile";
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+#paragrafo {
+    grid-area: paragrafo;
+    max-width: 50rem;
+    line-height: 2rem;
+    padding-top: 5rem;
+}
+
+#links {
+    grid-area: links;
+    display: flex;
+    gap: 0.6rem;
+    padding-top: 5rem;
+}
+
+a img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#profile {
+    grid-area: profile;
+    display: flex;
+    justify-content: center;
+}
+
+#profile img{
+    border-radius: 100%;
+    width: 30%;
+
+}
+
+h3 span {
+    font-weight: 700;
+    padding-top: 5rem;
+    font-size: 2.5rem;
+    line-height: 6.3rem;
+}
+
+h3 strong {
+    grid-area: front_end;
+    font-family: var(--font-special);
+    font-weight: 200;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--color-font-destaque);
+}
