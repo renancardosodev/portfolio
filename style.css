@@ -75,7 +75,11 @@ a {
     border-radius: 10rem;
     font-weight: 600;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    color: var(--color-dark);
+    font-size: 1.3rem;
 }
 
 .button_menu_projetos {
@@ -149,8 +153,17 @@ a img {
 }
 
 #profile img{
-    border-radius: 100%;
-    width: 30%;
+    width: 65%;
+    animation: girarInfinito 8s linear infinite;
+}
+
+@keyframes girarInfinito {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
 }
 
 h2 span {
@@ -169,18 +182,35 @@ h2 strong {
     color: var(--color-font-destaque);
 }
 
-#proj_1, #proj_2, #proj_3 {
+#section_proj, #detalhes {
     display: flex;
     gap: 1.5rem;
     align-items: center;
 }
 
-#proj_2 div:last-child {
-    padding-left: 3rem;
+#detalhes {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem !important;
+    border-bottom: 0.1rem solid var(--color-light);
+}
+
+#detalhes div:last-child {
+    padding-left: 2rem;
+}
+
+#detalhes {
+    transition: height 0.5s ease-in-out; /* Transição suave de altura */
+    height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Oculta conteúdo que ultrapassa a altura */
+}
+
+/* Animação de aparecimento de cima para baixo */
+#detalhes.active {
+    height: auto; /* Altera a altura para 'auto', mostrando o conteúdo */
 }
 
 #btn_ver_mais {
-    margin: 5rem auto 0 auto;
+    margin: 0 auto;
     padding: 0.6rem 3rem;
     background-color: transparent;
 }
@@ -194,16 +224,17 @@ h2 strong {
     padding: 1.3rem 0;
 }
 
-#projects img {
+.frame_proj {
     width: 100%;
     height: auto;
     border-radius: 1.5rem;
 }
 
-#projects p {
+.proj p, #detalhes > div > p:nth-child(2) {
     font-size: 1.3rem;
     color: var(--color-font-destaque);
     padding-top: 0.8rem;
+    padding-bottom: 2rem;
 }
 
 h3 {
@@ -300,3 +331,10 @@ h3 {
 footer {
     padding: 8rem 15rem 3rem 15rem !important;
 }
+
+#btn_proj {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0 !important;
+}
+
