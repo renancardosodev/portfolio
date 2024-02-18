@@ -72,16 +72,32 @@ function addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i) {
 
 function identifierDivsProjects(divs){
     divs.forEach((div, i) => {
-        div.addEventListener('click', function() {
-     
+        div.addEventListener('click', function() {  
             const nomeProjeto = this.querySelector('h3').textContent;
             const descricaoProjeto = this.querySelector('p').textContent;
-            const imagemSrc = this.querySelector('img').src;
+            const imagemSrc = this.querySelector('.img_proj_container .frame_proj').src;
 
-            setTimeout(() => {
-                addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i);
-                this.classList.add('active');
-            }, 100);
+            this.querySelector('.portfolio_hover').classList.add('show');
+            this.querySelector('.frame_proj').classList.add('blurred');
+            document.getElementById('detalhes').classList.add('show-project');
+            document.getElementById('section_proj').classList.add('show-project_2');
+        
+            addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i);
+
+            this.querySelector('.portfolio_hover').classList.add('show');
+            this.querySelector('.frame_proj').classList.add('blurred');
+
+            const divsProj = document.querySelectorAll('.proj');
+            const clickedDiv = this;
+
+            divsProj.forEach((divProj) => {
+                if (divProj !== clickedDiv) {
+                    divProj.classList.remove('selected');
+                    divProj.querySelector('.portfolio_hover').classList.remove('show');
+                    divProj.querySelector('.frame_proj').classList.remove('blurred');
+                }
+            });
+            
         });
     });
 }

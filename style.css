@@ -7,6 +7,7 @@
     --color-dark: #2E2D32;
     --color-light: #ececec;
     --color-font-destaque: #b6b6b6;
+    --color-background-gray: #f0f0f098;
     --font-default: "Inter", sans-serif;
     --font-special: "Playfair Display", serif;
 }
@@ -188,25 +189,38 @@ h2 strong {
     align-items: center;
 }
 
-#detalhes {
-    margin-bottom: 4rem;
-    padding-bottom: 4rem !important;
-    border-bottom: 0.1rem solid var(--color-light);
-}
-
 #detalhes div:last-child {
     padding-left: 2rem;
 }
 
-#detalhes {
-    transition: height 0.5s ease-in-out; /* Transição suave de altura */
-    height: 0; /* Começa com altura zero */
-    overflow: hidden; /* Oculta conteúdo que ultrapassa a altura */
+.show-project {
+    animation: slideDown 1s ease;
+    padding-bottom: 4rem !important;
+    border-bottom: 0.1rem solid var(--color-light);
 }
 
-/* Animação de aparecimento de cima para baixo */
-#detalhes.active {
-    height: auto; /* Altera a altura para 'auto', mostrando o conteúdo */
+.show-project_2 {
+    animation: slideDown_2 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideDown_2 {
+    from {
+        transform: translateY(-50px); 
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 #btn_ver_mais {
@@ -220,8 +234,8 @@ h2 strong {
     cursor: pointer;
 }
 
-#projects div {
-    padding: 1.3rem 0;
+#section_proj {
+    padding: 2rem 0;
 }
 
 .frame_proj {
@@ -263,8 +277,35 @@ h3 {
 }
 
 #skills span:hover {
-    background-color: var(--color-light);
-    transition: 0.6s;
+    background-color: var(--color-background-gray);
+    filter: blur(10px);
+    transition: 0.4s;
+}
+/* _________________________________________________________________________________________ */
+.img_proj_container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.portfolio_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; 
+    transition: opacity 0.3s ease;
+    border-radius: 2rem;
+}
+
+.blurred {
+    filter: blur(8px);
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #skills img {
@@ -310,12 +351,17 @@ h3 {
     width: 12rem;
     height: 12rem;
     padding: 2rem;
-    background-color: var(--color-light);
+    background-color: var(--color-background-gray);
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;   
+}
+
+.social_links a:hover {
+    transform: scale(1.1);
+    transition: 0.7s;
 }
 
 .social_links img{
