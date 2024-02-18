@@ -108,8 +108,27 @@ function identifierDivsProjects(divs){
     });
 }
 
+function updateArrowPosition(event) {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    const rect = arrow.getBoundingClientRect();
+    const imageX = rect.left + rect.width / 2;
+    const imageY = rect.top + rect.height / 2;
+
+    const angle = Math.atan2(mouseY - imageY, mouseX - imageX);
+
+    const rotation = angle * (180 / Math.PI);
+    arrow.style.transform = `rotate(${rotation}deg)`;
+}
+
+
+
 const divs = document.querySelectorAll('.proj');
+const arrow = document.getElementById('arrow');
 identifierDivsProjects(divs)
+
+document.addEventListener('mousemove', updateArrowPosition);
 
 
 

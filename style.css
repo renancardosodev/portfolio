@@ -12,6 +12,17 @@
     --font-special: "Playfair Display", serif;
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+        translate: 0 100vh;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -45,6 +56,12 @@ header {
     margin: 1rem 5rem;
     padding: 8rem 15rem;
     border-radius: 1.5rem;
+}
+
+#section_skills, #about_me, footer {
+    animation: appear 1ms ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: cover 0% cover 15%;
 }
 
 #section_main {
@@ -81,6 +98,10 @@ a {
     gap: 1rem;
     color: var(--color-dark);
     font-size: 1.3rem;
+}
+
+.btn_default {
+    background-color: white;
 }
 
 .button_menu_projetos {
@@ -150,13 +171,26 @@ a img {
 #profile {
     grid-area: profile;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
 }
 
-#profile img{
+#arrow {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+#selo {
     width: 65%;
     animation: girarInfinito 8s linear infinite;
 }
+
+
+
 
 @keyframes girarInfinito {
     from {
@@ -299,12 +333,13 @@ h3 {
     width: 100%;
     height: 100%;
     display: none; 
-    border-radius: 2rem; 
+    border-radius: 1.4rem; 
+    background-color: #e9e9e98a;
 }
 
 .blurred {
-    filter: blur(8px);
-    transition: all 0.3s ease;
+    filter: blur(2px);
+    transition: all 0.8s ease;
 }
 
 .show {
