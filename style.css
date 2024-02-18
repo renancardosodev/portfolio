@@ -285,6 +285,7 @@ h3 {
 .img_proj_container {
     position: relative;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .portfolio_hover {
@@ -295,7 +296,7 @@ h3 {
     height: 100%;
     display: none; 
     transition: opacity 0.3s ease;
-    border-radius: 2rem;
+    border-radius: 2rem; 
 }
 
 .blurred {
@@ -306,6 +307,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: default;
 }
 
 #skills img {

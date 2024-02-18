@@ -77,9 +77,15 @@ function identifierDivsProjects(divs){
             const descricaoProjeto = this.querySelector('p').textContent;
             const imagemSrc = this.querySelector('.img_proj_container .frame_proj').src;
 
+            document.getElementById('detalhes').classList.remove('show-project');
+
             this.querySelector('.portfolio_hover').classList.add('show');
             this.querySelector('.frame_proj').classList.add('blurred');
-            document.getElementById('detalhes').classList.add('show-project');
+
+            setTimeout(() => {
+                document.getElementById('detalhes').classList.add('show-project');
+            }, 1);
+
             document.getElementById('section_proj').classList.add('show-project_2');
         
             addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i);
