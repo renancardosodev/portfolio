@@ -189,6 +189,10 @@ h2 strong {
     align-items: center;
 }
 
+#detalhes {
+    margin: 3rem 0 2rem 0;
+}
+
 #detalhes div:last-child {
     padding-left: 2rem;
 }
