@@ -289,6 +289,11 @@ h2 strong {
     padding-bottom: 2rem;
 }
 
+.img_proj_container:hover {
+    transform: scale(1.05);
+    transition: 0.7s;
+}
+
 h3 {
     font-size: 1.65rem;
 }

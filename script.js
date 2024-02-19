@@ -25,42 +25,18 @@ function addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i) {
     aDeploy.target = '_blank'
     aRepositorio.classList.add("btn_default")
     aRepositorio.target = '_blank'
-    imgDeploy.src = "assets/img/github 2.png"
+    imgDeploy.src = "assets/img/deploy.png"
     imgRepositorio.src = "assets/img/github 2.png"
     pDeploy.textContent = 'Ver site'
     pDeploy.classList.add('p_Button')
     pRepositorio.textContent = 'Repositório'
     pRepositorio.classList.add('p_Button')
+
+    aDeploy.href = document.querySelectorAll('.portfolio_hover a:first-child')[i].href
+    aRepositorio.href = document.querySelectorAll('.portfolio_hover a:last-child')[i].href
+
+    pInformations.textContent = document.querySelectorAll('.proj p:last-child')[i].textContent
     
-
-    switch (i) {
-        case 0:
-            aDeploy.href = 'https://github.com/renancardosodev'
-            aRepositorio.href = 'https://github.com/renancardosodev'
-            pInformations.textContent = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure nisi repellendus in illum voluptate eaque doloremque facilis nemo earum vero magni illo, cupiditate blanditiis iusto ex cumque tempore rerum.'
-            break
-        case 1:
-            aDeploy.href = 'https://github.com/renancardosodev'
-            aRepositorio.href = 'https://github.com/renancardosodev'
-            pInformations.textContent = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure nisi repellendus in illum voluptate eaque doloremque facilis nemo earum vero magni illo, cupiditate blanditiis iusto ex cumque tempore rerum.'
-            break
-        case 2:
-            aDeploy.href = 'https://github.com/renancardosodev'
-            aRepositorio.href = 'https://github.com/renancardosodev'
-            pInformations.textContent = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure nisi repellendus in illum voluptate eaque doloremque facilis nemo earum vero magni illo, cupiditate blanditiis iusto ex cumque tempore rerum.'
-            break
-        case 3:
-            aDeploy.href = 'https://github.com/renancardosodev'
-            aRepositorio.href = 'https://github.com/renancardosodev'
-            pInformations.textContent = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure nisi repellendus in illum voluptate eaque doloremque facilis nemo earum vero magni illo, cupiditate blanditiis iusto ex cumque tempore rerum.'
-            break
-        case 4:
-            aDeploy.href = 'https://github.com/renancardosodev'
-            aRepositorio.href = 'https://github.com/renancardosodev'
-            pInformations.textContent = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, iure nisi repellendus in illum voluptate eaque doloremque facilis nemo earum vero magni illo, cupiditate blanditiis iusto ex cumque tempore rerum.'
-            break
-    }
-
     divImg.appendChild(imgProj)
     aDeploy.append(imgDeploy, pDeploy);
     aRepositorio.append(imgRepositorio, pRepositorio);
