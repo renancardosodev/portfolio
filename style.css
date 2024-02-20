@@ -304,16 +304,17 @@ h3 {
     justify-content: center;
     gap: 1.3rem;
     border-bottom: solid 0.2rem var(--color-light);
-    padding-bottom: 9rem;
+    padding-bottom: 6rem;
     padding-top: 4rem;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
 }
 
 #skills span {
     border: 0.2rem solid var(--color-light);
     border-radius: 1.5rem;
-    padding: 4rem 5rem;
-    width: calc(25% - 10px);
+    min-width: 15rem;
+    padding: 3rem 4rem;
+    width: calc(20% - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,6 +324,11 @@ h3 {
     background-color: var(--color-background-gray);
     filter: blur(10px);
     transition: 0.4s;
+}
+
+#skills span img {
+    width: 5rem;
+    height: auto;
 }
 /* _________________________________________________________________________________________ */
 .img_proj_container {
@@ -367,6 +373,7 @@ h3 {
 #about_me p {
     color: var(--color-font-destaque);
     margin-top: 2rem;
+    line-height: 2.5rem;
 }
 
 
@@ -380,9 +387,9 @@ h3 {
     display: flex;
     gap: 2rem;
     justify-content: space-around;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     border-bottom: solid 0.2rem var(--color-light);
-    padding-bottom: 8rem;
+    padding-bottom: 5rem;
 
 }
 
@@ -394,15 +401,15 @@ h3 {
 }
 
 .social_links a{
-    width: 12rem;
-    height: 12rem;
+    width: 9rem;
+    height: 9rem;
     padding: 2rem;
     background-color: var(--color-background-gray);
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2rem;   
+    margin-bottom: 1.5rem;   
 }
 
 .social_links a:hover {
@@ -411,13 +418,17 @@ h3 {
 }
 
 .social_links img{
-    width: 5rem;
+    width: 3.5rem;
     height: auto;
+}
+
+.social_links p {
+    font-size: 1.2rem;
 }
 
 #copyright {
     color: var(--color-font-destaque);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 footer {

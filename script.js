@@ -51,7 +51,7 @@ function identifierDivsProjects(divs){
         div.addEventListener('click', function() {  
             const nomeProjeto = this.querySelector('h3').textContent;
             const descricaoProjeto = this.querySelector('p').textContent;
-            const imagemSrc = this.querySelector('.img_proj_container .frame_proj').src;
+            const imagemSrc = this.querySelector('.img_proj_container .frame_destaque').src;
 
             document.getElementById('detalhes').classList.remove('show-project');
 
