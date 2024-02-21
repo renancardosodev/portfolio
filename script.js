@@ -31,6 +31,7 @@ function addSectionProject(nomeProjeto, descricaoProjeto, imagemSrc, i) {
     pDeploy.classList.add('p_Button')
     pRepositorio.textContent = 'Repositório'
     pRepositorio.classList.add('p_Button')
+    divImg.classList.add('div_Proj_Img')
 
     aDeploy.href = document.querySelectorAll('.portfolio_hover a:first-child')[i].href
     aRepositorio.href = document.querySelectorAll('.portfolio_hover a:last-child')[i].href
@@ -98,11 +99,46 @@ function updateArrowPosition(event) {
     arrow.style.transform = `rotate(${rotation}deg)`;
 }
 
+function ativandoCarrossel() {
+    const carrossel = document.querySelector(".carrossel")
+    const arrowBtn = document.querySelectorAll(".wrapper i")
+    const firtsCardWidth = carrossel.querySelector(".card").offsetWidth
+    let isDragging = false, startX, startScrollLeft
 
+    const dragStart = (event) => {
+        event.preventDefault()
+        isDragging = true
+        startX = event.pageX
+        startScrollLeft = carrossel.scrollLeft
+        carrossel.classList.add('.dragging')
+    }
+
+    const dragStop = () => {
+        isDragging = false
+        carrossel.classList.remove('.dragging')
+    }
+
+    const dragging = (e) => {
+        if(!isDragging)return
+        carrossel.scrollLeft = startScrollLeft - (e.pageX - startX)
+    }
+
+    carrossel.addEventListener('mousedown', dragStart)
+    carrossel.addEventListener('mousemove', dragging)
+    carrossel.addEventListener('mouseup', dragStop)
+
+    arrowBtn.forEach (btn=> {
+        btn.addEventListener('click', () => {
+            carrossel.scrollLeft += btn.id === 'left' ? -firtsCardWidth : firtsCardWidth
+        })
+    })
+
+}
 
 const divs = document.querySelectorAll('.proj');
 const arrow = document.getElementById('arrow');
 identifierDivsProjects(divs)
+ativandoCarrossel()
 
 document.addEventListener('mousemove', updateArrowPosition);
 
