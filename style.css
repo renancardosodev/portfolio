@@ -602,6 +602,12 @@ footer {
 
 /* _______________________________________________________ RESPONSIVO _______________________________________________________ */
 
+@media screen and (max-width:1024px) {
+    #profile {
+        display: none;
+    }
+}
+
 @media screen and (max-width:960px) {
     body{
         font-size: 1.7rem;
@@ -656,6 +662,10 @@ footer {
     .btn_default, .button_menu_projetos {
         padding: 1rem 1.8rem;
         font-size: 1.6rem;
+    }
+
+    #profile {
+        display: none;
     }
 
     #section_proj, #detalhes {
