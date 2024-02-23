@@ -73,7 +73,8 @@ a img {
 }
 
 h3 {
-    font-size: 1.65rem;
+    font-size: 1.8rem;
+    font-weight: 800;
 }
 
 h2 span {
@@ -91,6 +92,43 @@ h2 strong {
     font-size: 3rem;
     color: var(--color-font-destaque);
 }
+
+p::-webkit-scrollbar {
+    width: 4px;
+}
+
+p::-webkit-scrollbar-track {
+    background: var(--color-light);
+    border-radius: 5rem;
+}
+
+p::-webkit-scrollbar-thumb {
+    background: var(--color-font-destaque);
+    border-radius: 5rem;
+}
+
+p::-webkit-scrollbar-thumb:hover {
+    background: var(--color-dark);
+}
+
+p::-moz-scrollbar {
+    width: 4px;
+}
+
+p::-moz-scrollbar-track {
+    background: var(--color-light);
+    border-radius: 5rem;
+}
+
+p::-moz-scrollbar-thumb {
+    background: var(--color-font-destaque);
+    border-radius: 5rem;
+}
+
+p::-moz-scrollbar-thumb:hover {
+    background: var(--color-dark);
+}
+
 
 /* _______________________________________________________ SEÇÕES _______________________________________________________ */
 
@@ -280,16 +318,26 @@ h2 strong {
 }
 
 #detalhes > div > p:nth-child(2) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--color-font-destaque);
     padding-top: 0.8rem;
     padding-bottom: 2rem;
+}
+
+#detalhes > div > p:nth-child(3) {
+    font-size: 1.3rem;
+    color: var(--color-font-destaque);
+    line-height: 2.2rem;
+    height: 150px;
+    overflow: auto;
+    padding-right: 2rem;
 }
 
 .proj_info p:nth-child(2){
     font-size: 1.1rem;
     color: var(--color-font-destaque);
     padding-top: 0.4rem;
+    
 }
 
 .img_proj_container, .div_Proj_Img {
