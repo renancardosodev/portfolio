@@ -97,11 +97,6 @@ p::-webkit-scrollbar {
     width: 4px;
 }
 
-p::-webkit-scrollbar-track {
-    background: var(--color-light);
-    border-radius: 5rem;
-}
-
 p::-webkit-scrollbar-thumb {
     background: var(--color-font-destaque);
     border-radius: 5rem;
@@ -113,11 +108,6 @@ p::-webkit-scrollbar-thumb:hover {
 
 p::-moz-scrollbar {
     width: 4px;
-}
-
-p::-moz-scrollbar-track {
-    background: var(--color-light);
-    border-radius: 5rem;
 }
 
 p::-moz-scrollbar-thumb {
@@ -326,11 +316,11 @@ p::-moz-scrollbar-thumb:hover {
 
 #detalhes > div > p:nth-child(3) {
     font-size: 1.3rem;
-    color: var(--color-font-destaque);
+    color: var(--color-dark);
     line-height: 2.2rem;
     height: 150px;
     overflow: auto;
-    padding-right: 2rem;
+    padding-right: 2rem;  
 }
 
 .proj_info p:nth-child(2){
