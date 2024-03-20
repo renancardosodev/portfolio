@@ -135,12 +135,24 @@ function ativandoCarrossel() {
 
 }
 
+function seeMore() {
+    const divVerMais = document.querySelectorAll('.ver_mais')[0]
+
+    if(divVerMais.classList.contains('show_ver_mais')) {
+        divVerMais.classList.remove('show_ver_mais')
+    }else {
+        divVerMais.classList.add('show_ver_mais')
+    }
+    
+}
+
 const divs = document.querySelectorAll('.proj');
 const arrow = document.getElementById('arrow');
 identifierDivsProjects(divs)
 ativandoCarrossel()
 
 document.addEventListener('mousemove', updateArrowPosition);
+document.querySelector('#btn_ver_mais').addEventListener('click', seeMore)
 
 
 
